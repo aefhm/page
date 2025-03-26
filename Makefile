@@ -19,29 +19,7 @@ TMP_FILE = merged_tmp.html
 TIDY_TMP = tidy-tmp.html
 
 # Path to Homebrew-installed Tidy
-TIDY = /usr/bin/tidy
-
-# Tidy options for Homebrew Tidy (should support HTML5)
-TIDY_OPTS = -indent -wrap 120 -quiet --tidy-mark no --html5 yes
-# Makefile
-
-# Directory for generated files
-PUBLIC_DIR = public
-
-# Directory for source files
-SRC_DIR = src
-
-# Find all HTML files in the source directory, including nested ones
-HTML_FILES = $(shell find $(SRC_DIR) -name '*.html')
-
-# Base template file
-BASE_FILE = template.html
-
-# Temporary files
-MAIN_TMP = main-section.html
-SCRIPT_TMP = script-section.html
-TMP_FILE = merged_tmp.html
-TIDY_TMP = tidy-tmp.html
+TIDY = /opt/homebrew/bin/tidy
 
 # Tidy options for older Tidy versions
 TIDY_OPTS = \
