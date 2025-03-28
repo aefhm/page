@@ -35,6 +35,7 @@ TIDY_OPTS = \
 	--show-warnings no \
 	--show-errors 0 \
 	--doctype html5 \
+	--new-blocklevel-tags article, section \
 	--input-encoding utf8 \
     --output-encoding utf8
 
@@ -63,7 +64,7 @@ process_all:
 		awk '/<\/head>/{system("cat $(SCRIPT_TMP)");print;next}{print}' $(TMP_FILE) > $(TIDY_TMP); \
 		\
 		echo "Tidying HTML with Homebrew Tidy..."; \
-		$(TIDY) $(TIDY_OPTS) -o "$$output_file" $(TIDY_TMP) || cp $(TIDY_TMP) "$$output_file"; \
+		$(TIDY) $(TIDY_OPTS) -o "$$output_file" $(TIDY_TMP);\
 		\
 		echo "Created $$output_file"; \
 	done
