@@ -23,7 +23,7 @@ TIDY = /opt/homebrew/bin/tidy
 
 # Tidy options for older Tidy versions
 TIDY_OPTS = \
-	--indent auto \
+	--indent yes \
 	--indent-spaces 2 \
 	--vertical-space yes \
 	--wrap 120 \
@@ -37,7 +37,7 @@ TIDY_OPTS = \
 	--doctype html5 \
 	--new-blocklevel-tags article, section \
 	--input-encoding utf8 \
-    --output-encoding utf8
+	--output-encoding utf8
 
 # Process all HTML files using a for loop
 process_all:
