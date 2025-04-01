@@ -7,7 +7,7 @@
 }
 
 html {
-  font-family: 'Faculty Glyphic', sans-serif;
+  font-family: 'Faculty Glyphic', system-ui, sans-serif;
 }
 
 header {
@@ -17,6 +17,11 @@ header {
 
 body {
   margin: 1rem;
+  max-width: 1200px;
+}
+
+nav ul a {
+  transition: background 0.3s ease;
 }
 
 @media screen and (min-width: 16rem) and (max-width: 32rem) {
@@ -52,6 +57,7 @@ body {
     column-gap: 20px;
     display: grid;
     grid-template-columns: 3fr 1fr;
+    max-width: 960px;
     text-align: start;
   }
 
@@ -60,6 +66,11 @@ body {
     flex-direction: column;
     gap: 1rem;
     margin-top: 2rem;
+  }
+
+  body {
+    text-align: center;
+    margin: 0 auto;
   }
 
   nav ul {
