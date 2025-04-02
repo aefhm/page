@@ -16,12 +16,9 @@ header {
 }
 
 body {
-  margin: 1rem;
+  margin: 0;
   max-width: 1200px;
-}
-
-nav ul a {
-  transition: background 0.3s ease;
+  padding: 0 1rem;
 }
 
 /* Lazy loading styles */
@@ -32,6 +29,52 @@ img {
 
 img[loading="lazy"] {
   opacity: 1;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+svg {
+  width: 20px;
+  padding: 5px;
+}
+
+nav li {
+  flex: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding: unset;
+}
+
+nav ul a {
+  transition: background 0.3s ease;
+  color: inherit;
+  display: block;
+  font-size: medium;
+  font-weight: bolder;
+  padding: 10px 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: UPPERCASE;
+}
+
+nav ul a:hover {
+  background: azure;
+}
+
+.recipes {
+  & ul {
+    list-style: none;
+    padding-left: 2rem;
+    text-align: start;
+  }
+
+  & ol {
+    text-align: start;
+  }
 }
 
 @media screen and (max-width: 32rem) {
@@ -69,6 +112,8 @@ img[loading="lazy"] {
     grid-template-columns: 3fr 1fr;
     max-width: 960px;
     text-align: start;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
   aside {
@@ -81,67 +126,43 @@ img[loading="lazy"] {
   body {
     text-align: center;
     margin: 0 auto;
+  }
+
+  nav {
+    position: relative;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
   }
 
+  nav::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: black;
+    transform: translateX(-100vw);
+    width: 200vw;
+  }
+
   nav ul {
-    border: 1px solid black;
     display: flex;
+    justify-content: center;
+    padding: 0;
+    max-width: 200px;
+    margin: 0 0 .5rem 0;
+    gap: 3rem;
   }
 
   nav ul a {
-    border: 1px solid black;
-    display: unset;
+    border: none;
+    padding: 1rem 0.75rem;
   }
 
   .social-media {
     display: flex;
-    justify-content: start;
-  }
-}
-
-.bold {
-  font-weight: 600;
-}
-
-svg {
-  width: 20px;
-  padding: 5px;
-}
-
-nav li {
-  flex: 1;
-}
-
-nav ul {
-  list-style: none;
-  padding: unset;
-}
-
-nav ul a {
-  color: inherit;
-  display: block;
-  font-size: small;
-  font-weight: bolder;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: UPPERCASE;
-}
-
-nav ul a:hover {
-  background: azure;
-}
-
-.recipes {
-  & ul {
-    list-style: none;
-    padding-left: 2rem;
-    text-align: start;
-  }
-
-  & ol {
-    text-align: start;
+    justify-content: center;
   }
 }
