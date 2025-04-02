@@ -24,6 +24,16 @@ nav ul a {
   transition: background 0.3s ease;
 }
 
+/* Lazy loading styles */
+img {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+img[loading="lazy"] {
+  opacity: 1;
+}
+
 @media screen and (max-width: 32rem) {
   article {
     display: flex;
