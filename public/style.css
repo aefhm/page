@@ -81,6 +81,8 @@ img[loading="lazy"] {
   body {
     text-align: center;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
   }
 
   nav ul {
