@@ -24,7 +24,7 @@ nav ul a {
   transition: background 0.3s ease;
 }
 
-@media screen and (min-width: 16rem) and (max-width: 32rem) {
+@media screen and (max-width: 32rem) {
   article {
     display: flex;
     flex-direction: column-reverse;
