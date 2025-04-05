@@ -6,8 +6,12 @@
   font-display: swap;
 }
 
-html {
+:root {
   font-family: 'Faculty Glyphic', system-ui, sans-serif;
+}
+
+html {
+  font-family: inherit;
 }
 
 header {
@@ -77,16 +81,16 @@ nav ul a:hover {
   }
 }
 
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 32rem) {
   article {
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
-  }
-
-  .social-media {
-    display: flex;
-    justify-content: center;
   }
 
   aside {
@@ -159,10 +163,5 @@ nav ul a:hover {
   nav ul a {
     border: none;
     padding: 1rem 0.75rem;
-  }
-
-  .social-media {
-    display: flex;
-    justify-content: center;
   }
 }
