@@ -1,0 +1,40 @@
+# Allow all legitimate user agents
+User-agent: *
+Allow: /
+
+# Disallow AI and LLM crawlers
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Disallow access to sensitive directories
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /config/
+
+# Crawl-delay for all bots
+Crawl-delay: 10
