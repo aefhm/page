@@ -1,4 +1,4 @@
-# xizhang.page - Personal Website
+# xizhang.page - A Perspectives Collection
 
 [![GitHub deployments](https://img.shields.io/github/deployments/aefhm/page/page%20(production)?label=Publish)](https://github.com/aefhm/page/deployments)
 
