@@ -69,7 +69,7 @@ nav ul {
 }
 
 article {
-  max-width: 50rem;
+  max-width: 60rem;
 }
 
 nav ul a {
@@ -139,7 +139,7 @@ nav ul a:hover {
     text-align: start;
     margin: 0 auto;
     padding: 0 1rem;
-    max-width: 60rem;
+    width: 60rem;
   }
 
   article > :first-child {
@@ -148,7 +148,7 @@ nav ul a:hover {
 
   article > :only-child {
     max-width: 40rem;
-    margin: 0 auto;
+    margin: 0;
   }
 
   article > aside {
