@@ -118,6 +118,10 @@ nav ul a:hover {
     gap: 1rem;
   }
 
+  img {
+    max-width: 320px;
+  }
+
   nav {
     width: 90%;
   }
