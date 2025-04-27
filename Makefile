@@ -79,5 +79,9 @@ clean:
 # Default target
 all: process_all
 
+# Serve
+serve:
+	npx http-server -p 8080 --cors
+
 # Phony targets
 .PHONY: process_all clean all
