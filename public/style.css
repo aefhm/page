@@ -136,6 +136,10 @@ nav ul a:hover {
     max-width: 320px;
   }
 
+  main {
+    align-self: stretch;
+  }
+
   nav {
     width: 90%;
   }
