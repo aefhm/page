@@ -218,6 +218,10 @@ nav ul a:hover {
     margin-top: 2rem;
     max-width: 240px;
   }
+
+  figure {
+    margin: 0;
+  }
 }
 
 figcaption {
