@@ -77,6 +77,21 @@ svg {
   padding: 5px;
 }
 
+/* Style for SVG tooltips */
+svg[role="img"] {
+  cursor: pointer;
+}
+
+svg[role="img"]:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Style for tooltip text */
+svg[role="img"] title {
+  display: none;
+}
+
 nav li {
   flex: 1;
 }
@@ -230,4 +245,36 @@ figcaption {
   text-align: center;
   margin-top: 0.5rem;
   font-style: italic;
+}
+
+/* Custom tooltip styles */
+.social-media a {
+  position: relative;
+}
+
+.social-media a::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: #2a2a2a;
+  color: #fdecb6;
+  font-size: 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.social-media a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hide default tooltip */
+.social-media a[aria-label] {
+  text-decoration: none;
 }
