@@ -8,7 +8,7 @@ I believe in long term content and that pages should [last](https://jeffhuang.co
 
 ## Where
 
-This static site is deployed to [Cloudflare Pages](https://developers.cloudflare.com/pages/) with naked domain redirect.
+This static site is deployed to [Cloudflare Workers](https://developers.cloudflare.com/workers/) with naked domain redirect.
 
 ## How
 
