@@ -1,4 +1,4 @@
-# xizhang.page - A Perspectives Collection
+# xizhang.page
 
 [![GitHub deployments](https://img.shields.io/github/deployments/aefhm/page/production)](https://github.com/aefhm/page/deployments)
 
