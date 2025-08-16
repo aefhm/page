@@ -1,4 +1,4 @@
-# xizhang.page
+# Xi's Page
 
 [![GitHub deployments](https://img.shields.io/github/deployments/aefhm/page/production)](https://github.com/aefhm/page/deployments)
 
