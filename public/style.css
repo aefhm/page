@@ -16,7 +16,7 @@
 
 :root {
   font-family: 'Lora', system-ui, sans-serif;
-  color: #2a2a2a;
+  color: #1a1a1a;
 }
 
 html {
@@ -49,6 +49,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 18px;
+  font-weight: 500;
   align-items: center;
   line-height: 1.5;
 }
