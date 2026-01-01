@@ -84,4 +84,24 @@ serve:
 	npx http-server -p 8080 --cors
 
 # Phony targets
-.PHONY: process_all clean all
+.PHONY: process_all clean all install
+
+check_brew:
+	@if ! command -v brew &> /dev/null; then \
+		echo "Homebrew is not installed. Please install Homebrew first (https://brew.sh):"; \
+		echo "/bin/bash -c \"$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""; \
+		exit 1; \
+	fi
+
+check_npm:
+	@if ! command -v npm &> /dev/null; then \
+		echo "Node.js and npm are not installed. Please install them first (https://nodejs.org)."; \
+		exit 1; \
+	fi
+
+install: check_brew check_npm
+	@echo "Installing dependencies..."
+	@echo "Installing tidy-html5 using Homebrew..."
+	brew install tidy-html5
+	@echo "Installing http-server using npm..."
+	npm install -g http-server
