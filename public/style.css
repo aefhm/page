@@ -1,46 +1,80 @@
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('/fonts/CormorantGaramond-SemiBold.woff2') format('woff2');
+  font-family: 'Fraunces';
+  src: url('/fonts/Fraunces-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lora';
-  src: url('/fonts/Lora-Regular.woff2') format('woff2');
+  font-family: 'Fraunces';
+  src: url('/fonts/Fraunces-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/Newsreader-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/Newsreader-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/Newsreader-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  font-family: 'Lora', system-ui, sans-serif;
-  color: #1a1a1a;
+  font-family: 'Newsreader', system-ui, sans-serif;
+  color: #2a2320;
 }
 
 html {
-  background: #fdecb6;
+  background: #fdf0c4;
   font-family: inherit;
 }
 
 header {
   font-size: larger;
   text-align: center;
-  color: #1a1a1a;
+  color: #2a2320;
 }
 
 h1 {
-  margin: 1rem 0 0;
-  color: #1a1a1a;
+  margin: 1rem 0 0.5rem;
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 1.15;
+  color: #c25550;
 }
 
+h1 .culture { color: inherit; }
+h1 .accent { color: inherit; }
+
 h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  letter-spacing: 0.2px; /* slightly open */
-  color: #222222;
+  font-family: 'Fraunces', serif;
   line-height: 1.2;
+}
+
+h2, h3 {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #2a2320;
 }
 
 body {
@@ -52,6 +86,18 @@ body {
   font-weight: 500;
   align-items: center;
   line-height: 1.5;
+}
+
+a {
+  color: #c25550;
+  text-decoration-color: #c25550;
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+a:hover {
+  color: #3a6570;
+  text-decoration-color: #3a6570;
 }
 
 /* Lazy loading styles */
@@ -76,6 +122,7 @@ img[loading="lazy"] {
 svg {
   width: 20px;
   padding: 5px;
+  fill: #c25550;
 }
 
 /* Style for SVG tooltips */
@@ -104,19 +151,20 @@ nav ul {
 
 nav ul a {
   transition: background 0.3s ease;
-  color: #2a2a2a;
+  color: #2a2320;
   display: block;
-  font-size: medium;
-  font-weight: bolder;
-  padding: 10px 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 0.5rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 nav ul a:hover {
-  background: #b3a3d4;
-  color: #1a1a1a;
+  background: rgba(58,101,112,0.50);
+  color: #2a2320;
 }
 
 .recipes ul {
@@ -132,6 +180,11 @@ nav ul a:hover {
 .social-media {
   display: flex;
   justify-content: center;
+}
+
+.social-media svg {
+  fill: #c25550;
+  stroke: #c25550;
 }
 
 @media screen and (max-width: 32rem) {
@@ -165,7 +218,7 @@ nav ul a:hover {
   }
 
   nav ul a {
-    border: solid 2px #2a2a2a;
+    border: solid 2px #2a2320;
   }
 }
 
@@ -212,7 +265,7 @@ nav ul a:hover {
     display: flex;
     justify-content: center;
     width: 100%;
-    border-bottom: 2px solid #2a2a2a;
+    border-bottom: 1px solid rgba(42,35,32,0.1);
   }
 
   nav ul {
@@ -221,12 +274,12 @@ nav ul a:hover {
     padding: 0;
     max-width: 200px;
     margin: 0 0 0.5rem 0;
-    gap: 3rem;
+    gap: 1.75rem;
   }
 
   nav ul a {
     border: none;
-    padding: 1rem 0.75rem;
+    padding: 0.5rem 0.75rem;
   }
 
   aside img {
@@ -241,10 +294,44 @@ nav ul a:hover {
 
 figcaption {
   font-size: 0.8em;
-  color: #666;
+  color: #7a7265;
   text-align: center;
   margin-top: 0.5rem;
   font-style: italic;
+}
+
+blockquote {
+  border-left: 3px solid #c25550;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #4a4440;
+  line-height: 1.6;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-size: 0.85em;
+  color: #7a7265;
+}
+
+.writings section p:first-of-type::first-letter {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.75;
+  padding: 0.05em 0.08em 0 0;
+  color: #c25550;
+}
+
+.section-divider {
+  height: 16px;
+  margin: 2.5rem auto;
+  max-width: 380px;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='16' viewBox='0 0 60 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8 C5 2, 10 2, 15 8 C20 14, 25 14, 30 8 C35 2, 40 2, 45 8 C50 14, 55 14, 60 8' fill='none' stroke='%233a6570' stroke-width='0.8' opacity='0.25'/%3E%3Cpath d='M0 10 C5 4, 10 4, 15 10 C20 16, 25 16, 30 10 C35 4, 40 4, 45 10 C50 16, 55 16, 60 10' fill='none' stroke='%23c25550' stroke-width='0.6' opacity='0.2'/%3E%3C/svg%3E") repeat-x center;
 }
 
 /* Custom tooltip styles */
@@ -259,8 +346,8 @@ figcaption {
   left: 50%;
   transform: translateX(-50%);
   padding: 4px 8px;
-  background: #2a2a2a;
-  color: #fdecb6;
+  background: #2a2320;
+  color: #fdf0c4;
   font-size: 14px;
   border-radius: 4px;
   white-space: nowrap;
