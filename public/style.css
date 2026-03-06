@@ -199,7 +199,7 @@ nav ul a:hover {
   article {
     display: flex;
     flex-direction: column-reverse;
-    text-align: center;
+    text-align: left;
   }
 
   aside {
@@ -207,6 +207,11 @@ nav ul a:hover {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    text-align: center;
+  }
+
+  header {
+    text-align: center;
   }
 
   img {
@@ -218,15 +223,34 @@ nav ul a:hover {
   }
 
   nav {
-    width: 90%;
+    width: auto;
+    border-bottom: 1px solid rgba(42,35,32,0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+    padding: 0;
   }
 
   nav ul li {
-    padding: 1px;
+    padding: 0;
   }
 
   nav ul a {
-    border: solid 2px #2a2320;
+    border: none;
+    padding: 0.4rem 0;
+    font-size: 0.72rem;
+  }
+
+  .writings section p:first-of-type::first-letter {
+    font-size: 1em;
+    float: none;
+    padding: 0;
+    font-weight: inherit;
   }
 }
 
