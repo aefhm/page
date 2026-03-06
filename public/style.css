@@ -104,8 +104,8 @@ a {
 }
 
 a:hover {
-  color: #3a6570;
-  text-decoration-color: #3a6570;
+  color: #4a8575;
+  text-decoration-color: #4a8575;
 }
 
 /* Lazy loading styles */
@@ -339,7 +339,7 @@ blockquote cite {
   height: 16px;
   margin: 2.5rem auto;
   max-width: 380px;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='16' viewBox='0 0 60 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8 C5 2, 10 2, 15 8 C20 14, 25 14, 30 8 C35 2, 40 2, 45 8 C50 14, 55 14, 60 8' fill='none' stroke='%233a6570' stroke-width='0.8' opacity='0.25'/%3E%3Cpath d='M0 10 C5 4, 10 4, 15 10 C20 16, 25 16, 30 10 C35 4, 40 4, 45 10 C50 16, 55 16, 60 10' fill='none' stroke='%23c25550' stroke-width='0.6' opacity='0.2'/%3E%3C/svg%3E") repeat-x center;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='16' viewBox='0 0 60 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8 C5 2, 10 2, 15 8 C20 14, 25 14, 30 8 C35 2, 40 2, 45 8 C50 14, 55 14, 60 8' fill='none' stroke='%239ac5b8' stroke-width='0.8' opacity='0.25'/%3E%3Cpath d='M0 10 C5 4, 10 4, 15 10 C20 16, 25 16, 30 10 C35 4, 40 4, 45 10 C50 16, 55 16, 60 10' fill='none' stroke='%23c25550' stroke-width='0.6' opacity='0.2'/%3E%3C/svg%3E") repeat-x center;
 }
 
 /* Custom tooltip styles */
