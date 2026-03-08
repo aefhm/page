@@ -161,9 +161,10 @@ nav ul a {
   transition: background 0.3s ease;
   color: #2a2320;
   display: block;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  padding: 6px 0.5rem;
+  padding: 3px 0.5rem;
+  line-height: 1.2;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
