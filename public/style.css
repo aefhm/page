@@ -120,7 +120,7 @@
   --size-divider-max: 380px;
   --size-tooltip-radius: 4px;
   --size-border-thin: 1px;
-  --size-border-accent: 2px;
+  --size-border-accent: 3px;
   --size-nav-gap-desktop: 2rem;
   --size-nav-gap-mobile-row: 0.35rem;
   --size-nav-gap-mobile-col: 1.4rem;
@@ -320,6 +320,7 @@ nav ul a:hover {
 .social-media {
   display: flex;
   justify-content: center;
+  margin-top: var(--space-section-gap);
 }
 
 .social-media a {
