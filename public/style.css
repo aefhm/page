@@ -301,20 +301,86 @@ nav ul a:hover {
 
 .recipes ul {
   list-style: none;
-  padding-left: var(--space-aside-top);
+  padding-left: 1.25rem;
+  margin: var(--space-0);
   text-align: start;
 }
 
 .recipes ol {
+  margin: var(--space-0);
+  padding-left: 1.5rem;
   text-align: start;
 }
 
+.recipes {
+  width: min(var(--size-reading-width), 100%);
+  margin: var(--space-0) auto;
+}
+
+.recipes > * + * {
+  margin-top: var(--space-section-gap);
+}
+
 .recipes section,
+.recipes header,
 .recipes h2,
 .recipes h3,
 .recipes p,
 .recipes li {
   text-align: start;
+}
+
+.recipe-header > * {
+  margin: var(--space-0);
+}
+
+.recipe-header > * + * {
+  margin-top: 0.45rem;
+}
+
+.recipe-description,
+.recipe-meta,
+.recipe-notes p {
+  color: rgb(var(--ink-blue-rgb) / var(--alpha-ink-muted));
+}
+
+.recipe-meta {
+  font-size: 0.95em;
+}
+
+.recipe-hero {
+  margin: var(--space-0);
+}
+
+.recipe-hero img {
+  max-width: 100%;
+}
+
+.recipe-steps li + li {
+  margin-top: 1rem;
+}
+
+.recipe-steps li > p {
+  margin: var(--space-0);
+}
+
+.recipe-photos {
+  display: grid;
+  gap: var(--space-section-gap);
+}
+
+.recipe-photos > h3 {
+  margin-bottom: var(--space-0);
+}
+
+.recipe-photos figure {
+  margin: var(--space-0);
+  padding: 0.9rem;
+  border: var(--size-border-thin) solid rgb(var(--ink-blue-rgb) / var(--alpha-nav-line));
+}
+
+.recipe-photos img {
+  max-width: 100%;
 }
 
 .social-media {
@@ -347,6 +413,10 @@ nav ul a:hover {
     display: flex;
     flex-direction: column-reverse;
     text-align: left;
+  }
+
+  article.recipes {
+    display: block;
   }
 
   aside {
@@ -454,6 +524,10 @@ nav ul a:hover {
   body {
     text-align: center;
     margin: var(--space-0) auto;
+  }
+
+  main {
+    width: 100%;
   }
 
   nav {
