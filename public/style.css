@@ -184,7 +184,7 @@ h1 {
   color: var(--ink-blue);
 }
 
-h1 .culture { color: inherit; }
+h1 .field { color: inherit; }
 h1 .accent { color: var(--imperial-yellow); }
 
 h2, h3 {
