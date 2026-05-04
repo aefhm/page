@@ -466,7 +466,7 @@ nav ul a:hover {
     font-size: var(--font-size-nav-mobile);
   }
 
-  .writings section p:first-of-type::first-letter {
+  .writings section > p:first-of-type::first-letter {
     font-size: var(--font-size-dropcap-mobile);
     float: none;
     padding: var(--space-0);
@@ -595,7 +595,7 @@ blockquote cite {
   color: rgb(var(--ink-blue-rgb) / var(--alpha-ink-cite));
 }
 
-.writings section p:first-of-type::first-letter {
+.writings section > p:first-of-type::first-letter {
   font-family: var(--font-display);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-dropcap);
