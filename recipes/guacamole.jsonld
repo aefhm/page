@@ -1,0 +1,57 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "slug": "guacamole",
+  "name": "Guacamole",
+  "description": "Simple guacamole with avocado, tomato, onion, jalapeño, lime, and cilantro.",
+  "datePublished": "2024-06-13",
+  "recipeCuisine": "Mexican",
+  "recipeCategory": "Food",
+  "recipeYield": "1",
+  "prepTime": "PT5M",
+  "keywords": "avocado",
+  "author": {
+    "@type": "Person",
+    "name": "Xi Zhang",
+    "url": "https://xizhang.page"
+  },
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "50 calories"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3"
+  },
+  "recipeIngredient": [
+    "3 ripe avocados",
+    "1 roma tomato",
+    "1 red onion",
+    "1 jalapeño",
+    "2 limes",
+    "cilantro"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cube the avocados."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Chop the onion, tomato, cilantro, and jalapeño."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mix everything together."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Juice the limes into the mixture."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add salt to taste."
+    }
+  ]
+}

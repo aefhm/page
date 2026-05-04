@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "slug": "dumplings",
+  "name": "Dumplings",
+  "description": "A simple homemade dumpling dough with a shrimp filling and a few visual checkpoints for shaping.",
+  "datePublished": "2019-11-05",
+  "recipeCuisine": "Chinese",
+  "recipeCategory": "Food",
+  "recipeYield": "~30 dumplings",
+  "keywords": "dumplings, shrimp",
+  "author": {
+    "@type": "Person",
+    "name": "Xi",
+    "url": "https://xizhang.page"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "/images/dumplings-6.webp",
+    "caption": "Finished boiled dumplings ready to eat"
+  },
+  "recipeIngredient": [
+    "Shrimp",
+    "Cilantro",
+    "Soy sauce",
+    "3 cups flour",
+    "1 cup water"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Gradually mix water into the flour to make the dough, then let it rest for a bit.",
+      "image": {
+        "@type": "ImageObject",
+        "contentUrl": "/images/dumplings-1.webp",
+        "caption": "The dough after mixing flour and water and before shaping."
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Roll the dough into a long rope."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cut the dough into small pieces and flatten them into wrappers.",
+      "image": {
+        "@type": "ImageObject",
+        "contentUrl": "/images/dumplings-3.webp",
+        "caption": "Cut dough pieces pressed into wrappers."
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Fill the dumpling skins and fold them shut.",
+      "image": {
+        "@type": "ImageObject",
+        "contentUrl": "/images/dumplings-5.webp",
+        "caption": "Filled dumplings folded and sealed before cooking."
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Boil water and cook the dumplings for about 5 minutes, until they float and look plump."
+    },
+    {
+      "@type": "HowToTip",
+      "text": "Dust the wrappers lightly with flour if they start sticking, and keep the filling modest so the dumplings are easier to seal."
+    }
+  ]
+}

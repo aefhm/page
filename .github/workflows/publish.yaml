@@ -9,6 +9,8 @@ jobs:
     environment: production
     steps:
       - uses: actions/checkout@v4
+      - name: Build site
+        run: cargo run --locked
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:

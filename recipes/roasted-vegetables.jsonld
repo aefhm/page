@@ -1,0 +1,42 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "slug": "roasted-vegetables",
+  "name": "Roasted Vegetables",
+  "description": "A flexible roast-vegetable guide with timing by vegetable type.",
+  "datePublished": "2019-11-05",
+  "recipeCuisine": "American",
+  "recipeCategory": "Food",
+  "keywords": "vegetarian",
+  "author": {
+    "@type": "Person",
+    "name": "Xi Zhang",
+    "url": "https://xizhang.page"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  },
+  "recipeIngredient": [
+    "Vegetables of choice",
+    "Salt",
+    "Black pepper",
+    "Not too much olive oil",
+    "Oregano"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Roast squash, roots, and alliums for 45 minutes at 425 F."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Roast brassicas and mushrooms for 25 minutes at 425 F."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Drizzle vegetables with some olive oil, then season with salt, pepper, and oregano."
+    }
+  ]
+}

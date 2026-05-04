@@ -1,0 +1,45 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "slug": "biscuits",
+  "name": "Biscuits",
+  "description": "An easy buttery biscuit.",
+  "datePublished": "2020-05-18",
+  "recipeCuisine": "American",
+  "recipeCategory": "Food",
+  "recipeYield": "12",
+  "prepTime": "PT5M",
+  "cookTime": "PT12M",
+  "totalTime": "PT17M",
+  "keywords": "butter, biscuits",
+  "citation": "https://cooking.nytimes.com/recipes/1013741-all-purpose-biscuits",
+  "author": {
+    "@type": "Person",
+    "name": "Xi Zhang",
+    "url": "https://xizhang.page"
+  },
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "50 calories"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3"
+  },
+  "recipeIngredient": [
+    "2 cups of all purpose flour",
+    "4 tablespoons of butter",
+    "2 tablespoons of baking powder",
+    "1 cup of milk",
+    "1/2 teaspoon of salt"
+  ],
+  "recipeInstructions": [
+    {"@type": "HowToStep", "text": "Pre-heat oven to 425."},
+    {"@type": "HowToStep", "text": "Mix flour, salt, and baking powder."},
+    {"@type": "HowToStep", "text": "Cut butter into pats and add to flour."},
+    {"@type": "HowToStep", "text": "Mix in milk."},
+    {"@type": "HowToStep", "text": "Fold dough on a well-floured surface into a rough rectangle about an inch thick. Fold it over and gently pat it down again. Repeat. Cover the dough loosely with a kitchen towel."},
+    {"@type": "HowToStep", "text": "Cut dough into 12 pieces and place on a cookie sheet and bake until golden brown, approximately 10 to 15 minutes."}
+  ]
+}

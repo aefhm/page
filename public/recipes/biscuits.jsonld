@@ -1,11 +1,4 @@
-<!doctype html>
-  <html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Biscuits</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <script type="application/ld+json"> {
+{
   "@context": "https://schema.org/",
   "@type": "Recipe",
   "recipeInstructions": [
@@ -66,46 +59,4 @@
     "1 cup of milk",
     "1/2 teaspoon of salt"
   ]
-}</script>
-  </head>
-  <body>
-    <header>
-      <h1><span class="field">Field</span> <span class="accent">Bobbin</span></h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="/readings">Readings</a></li>
-        <li><a href="/writings">Writings</a></li>
-        <li><a href="/recipes">Recipes</a></li>
-        <li><a href="/forms/">Forms</a></li>
-        <li><a href="/index.html">About</a></li>
-      </ul>
-    </nav>
-    <main>
-     <article class="recipes">
-        <section>
-    <h2>Biscuits</h2>
-    
-    <h3>Ingredients</h3>
-    <ul>
-      <li>2 cups of all purpose flour</li>
-  <li>4 tablespoons of butter</li>
-  <li>2 tablespoons of baking powder</li>
-  <li>1 cup of milk</li>
-  <li>1/2 teaspoon of salt</li>
-    </ul>
-    <h3>Steps</h3>
-    <ol>
-        <li><p>Pre-heat oven to 425.</p></li>
-    <li><p>Mix flour, salt, and baking powder.</p></li>
-    <li><p>Cut butter into pats and add to flour.</p></li>
-    <li><p>Mix in milk.</p></li>
-    <li><p>Fold dough on a well-floured surface into a rough rectangle about an inch thick. Fold it over and gently pat it down again. Repeat. Cover the dough loosely with a kitchen towel.</p></li>
-    <li><p>Cut dough into 12 pieces and place on a cookie sheet and bake until golden brown, approximately 10 to 15 minutes.</p></li>
- </ol>
-    </section>
-     </article>
-    </main>
-  </body>
-  </html>
-  
+}

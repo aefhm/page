@@ -1,0 +1,58 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "In a large mixing bowl, whisk together flour and eggs."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gradually stir in milk and water, mixing to combine."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add melted butter and salt; beat until smooth."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Heat a lightly oiled crêpe pan over medium heat."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Pour approximately 1/4 cup batter into the pan, tilting to spread evenly."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cook for about 2 minutes until light brown, then flip and cook the other side."
+    }
+  ],
+  "name": "Crêpes",
+  "description": "Simple butter crêpes.",
+  "datePublished": "2019-11-05",
+  "recipeCuisine": "French",
+  "recipeCategory": "Food",
+  "keywords": "butter",
+  "author": {
+    "@type": "Person",
+    "name": "Xi Zhang",
+    "url": "https://xizhang.page"
+  },
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "200 calories"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  },
+  "recipeIngredient": [
+    "2 cups flour",
+    "4 eggs",
+    "1 cup milk",
+    "1 cup water",
+    "4 tablespoons butter",
+    "pinch of salt"
+  ]
+}

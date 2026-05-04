@@ -1,210 +1,136 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+  <html lang="en-US">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A personal site by Xi Zhang exploring culture, data sovereignty, and more.">
-    <title>
-      Xi
-    </title>
-    <link rel="icon" type="image/svg+xml" href=
-    "data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='0.9em' font-size='90'&gt;🦬&lt;/text&gt;&lt;/svg&gt;">
+    <title>Dumplings</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
-    <script type="application/ld+json">
+    <script type="application/ld+json"> {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "recipeInstructions": [
     {
-      "@context": "https://schema.org/",
-      "@type": "Recipe",
-      "name": "Dumplings",
-      "image": [
-      "https://example.com/photos/1x1/photo.jpg"
-      ],
-      "author": {
-        "@type": "Person",
-        "name": "Xi"
-      },
-      "datePublished": "2019-11-05",
-      "description": "Dumplings",
-      "recipeCuisine": "Chinese",
-      "keywords": "dumplings, vegetarian",
-      "recipeCategory": "Food",
-      "nutrition": {
-        "@type": "NutritionInformation",
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "1"
-      },
-      "recipeIngredient": [
-        "3 cups of flour",
-        "1 cup water"
-      ],
-      "recipeInstructions": [
-        {
-          "@type": "HowToStep",
-          "text": "Mix water gradually into flour. Let it sit for a lil bit."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Cook the thing."
-        }
-      ],
+      "@type": "HowToStep",
+      "text": "Gradually mix water into the flour to make the dough, then let it rest for a bit.",
+      "image": {
+        "@type": "ImageObject",
+        "contentUrl": "/images/dumplings-1.webp",
+        "caption": "The dough after mixing flour and water and before shaping."
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Roll the dough into a long rope."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cut the dough into small pieces and flatten them into wrappers.",
+      "image": {
+        "@type": "ImageObject",
+        "contentUrl": "/images/dumplings-3.webp",
+        "caption": "Cut dough pieces pressed into wrappers."
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Fill the dumpling skins and fold them shut.",
+      "image": {
+        "@type": "ImageObject",
+        "contentUrl": "/images/dumplings-5.webp",
+        "caption": "Filled dumplings folded and sealed before cooking."
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Boil water and cook the dumplings for about 5 minutes, until they float and look plump."
+    },
+    {
+      "@type": "HowToTip",
+      "text": "Dust the wrappers lightly with flour if they start sticking, and keep the filling modest so the dumplings are easier to seal."
     }
-    </script>
+  ],
+  "name": "Dumplings",
+  "description": "A simple homemade dumpling dough with a shrimp filling and a few visual checkpoints for shaping.",
+  "datePublished": "2019-11-05",
+  "recipeCuisine": "Chinese",
+  "recipeCategory": "Food",
+  "recipeYield": "~30 dumplings",
+  "keywords": "dumplings, shrimp",
+  "author": {
+    "@type": "Person",
+    "name": "Xi",
+    "url": "https://xizhang.page"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "/images/dumplings-6.webp",
+    "caption": "Finished boiled dumplings ready to eat"
+  },
+  "recipeIngredient": [
+    "Shrimp",
+    "Cilantro",
+    "Soy sauce",
+    "3 cups flour",
+    "1 cup water"
+  ]
+}</script>
   </head>
   <body>
     <header>
-      <h1>
-        <span class="field">Field</span> <span class="accent">Bobbin</span>
-      </h1>
+      <h1><span class="field">Field</span> <span class="accent">Bobbin</span></h1>
     </header>
-
     <nav>
       <ul>
-        <li>
-          <a href="/readings">Readings</a>
-        </li>
-
-        <li>
-          <a href="/writings">Writings</a>
-        </li>
-
-        <li>
-          <a href="/recipes">Recipes</a>
-        </li>
-
-        <li>
-          <a href="/forms/">Forms</a>
-        </li>
-
-        <li>
-          <a href="/index.html">About</a>
-        </li>
+        <li><a href="/readings">Readings</a></li>
+        <li><a href="/writings">Writings</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/forms/">Forms</a></li>
+        <li><a href="/index.html">About</a></li>
       </ul>
     </nav>
-
     <main>
-      <article class="recipes">
-        <header class="recipe-header">
-          <h2>
-            Dumplings
-          </h2>
-
-          <p class="recipe-description">
-            A simple homemade dumpling dough with a shrimp filling and a few visual checkpoints for shaping.
-          </p>
-
-          <p class="recipe-meta">
-            Chinese · Shrimp filling
-          </p>
-        </header>
-
+     <article class="recipes">
+        <section>
+    <h2>Dumplings</h2>
         <figure class="recipe-hero">
-          <img src="../images/dumplings-6.webp" alt="Finished boiled dumplings ready to eat" loading="lazy">
-        </figure>
+      <img src="/images/dumplings-6.webp" alt="Finished boiled dumplings ready to eat" loading="lazy">
+    </figure>
 
-        <section class="recipe-ingredients">
-          <h3>
-            Ingredients
-          </h3>
-
-          <ul>
-            <li>Shrimp
-            </li>
-
-            <li>Cilantro
-            </li>
-
-            <li>Soy sauce
-            </li>
-
-            <li>3 cups flour
-            </li>
-
-            <li>1 cup water
-            </li>
-          </ul>
-        </section>
-
-        <section class="recipe-steps">
-          <h3>
-            Steps
-          </h3>
-
-          <ol>
-            <li>
-              <p>
-                Gradually mix water into the flour to make the dough, then let it rest for a bit.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Roll the dough into a long rope.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Cut the dough into small pieces and flatten them into wrappers.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Fill the dumpling skins and fold them shut.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Boil water and cook the dumplings for about 5 minutes, until they float and look plump.
-              </p>
-            </li>
-          </ol>
-        </section>
-
+    <h3>Ingredients</h3>
+    <ul>
+      <li>Shrimp</li>
+  <li>Cilantro</li>
+  <li>Soy sauce</li>
+  <li>3 cups flour</li>
+  <li>1 cup water</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+        <li><p>Gradually mix water into the flour to make the dough, then let it rest for a bit.</p>
+      <figure class="step-photo">
+        <img src="/images/dumplings-1.webp" alt="The dough after mixing flour and water and before shaping." loading="lazy">
+        <figcaption>The dough after mixing flour and water and before shaping.</figcaption>
+      </figure></li>
+    <li><p>Roll the dough into a long rope.</p></li>
+    <li><p>Cut the dough into small pieces and flatten them into wrappers.</p>
+      <figure class="step-photo">
+        <img src="/images/dumplings-3.webp" alt="Cut dough pieces pressed into wrappers." loading="lazy">
+        <figcaption>Cut dough pieces pressed into wrappers.</figcaption>
+      </figure></li>
+    <li><p>Fill the dumpling skins and fold them shut.</p>
+      <figure class="step-photo">
+        <img src="/images/dumplings-5.webp" alt="Filled dumplings folded and sealed before cooking." loading="lazy">
+        <figcaption>Filled dumplings folded and sealed before cooking.</figcaption>
+      </figure></li>
+    <li><p>Boil water and cook the dumplings for about 5 minutes, until they float and look plump.</p></li>
+ </ol>
+    </section>
         <section class="recipe-notes">
-          <h3>
-            Notes
-          </h3>
-
-          <p>
-            Dust the wrappers lightly with flour if they start sticking, and keep the filling modest so the dumplings
-            are easier to seal.
-          </p>
-        </section>
-
-        <section class="recipe-photos">
-          <h3>
-            Step Photos
-          </h3>
-
-          <figure>
-            <img src="../images/dumplings-1.webp" alt="Fresh dumpling dough after the flour and water have been mixed"
-            loading="lazy">
-            <figcaption>
-              The dough after mixing flour and water and before shaping.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="../images/dumplings-3.webp" alt="Small pieces of dumpling dough pressed into wrappers" loading=
-            "lazy">
-            <figcaption>
-              Cut dough pieces pressed into wrappers.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="../images/dumplings-5.webp" alt="Filled dumplings folded and sealed before cooking" loading=
-            "lazy">
-            <figcaption>
-              Filled dumplings folded and sealed before cooking.
-            </figcaption>
-          </figure>
-        </section>
-      </article>
+            <h3>Notes</h3>
+                <p>Dust the wrappers lightly with flour if they start sticking, and keep the filling modest so the dumplings are easier to seal.</p>
+ </section>
+             </article>
     </main>
   </body>
-</html>
+  </html>
+  

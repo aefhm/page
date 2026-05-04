@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Set kettle to 95 C (203 F). Rinse the V60 filter and place 15g ground coffee in the dripper."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Bloom (0:00-0:45): pour 30ml water over the grounds, swirl gently, and wait 45 seconds."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Main pour (0:45-1:45): pour the remaining 220ml water in a slow spiral, staying in the center."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Finish with a gentle swirl when the bed drops, then let the brewer drain completely."
+    }
+  ],
+  "name": "V60 Pour Over Coffee",
+  "description": "A compact V60 routine based on the Hoffman method.",
+  "datePublished": "2025-07-23",
+  "recipeCuisine": "International",
+  "recipeCategory": "Beverage",
+  "recipeYield": "1",
+  "prepTime": "PT1M",
+  "cookTime": "PT3M",
+  "totalTime": "PT4M",
+  "keywords": "coffee, v60, pour over, light roast, hoffman",
+  "author": {
+    "@type": "Person",
+    "name": "Xi Zhang",
+    "url": "https://xizhang.page"
+  },
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "5 calories"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  },
+  "recipeIngredient": [
+    "15g light roast coffee (medium grind)",
+    "250ml water at 95 C (203 F)",
+    "V60 dripper and filter"
+  ]
+}
