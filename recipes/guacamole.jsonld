@@ -3,7 +3,7 @@
   "@type": "Recipe",
   "slug": "guacamole",
   "name": "Guacamole",
-  "description": "Simple guacamole with avocado, tomato, onion, jalapeño, lime, and cilantro.",
+  "description": "Simple guacamole with avocado, seeded tomato, a little red onion, serrano, lime, cilantro, and kosher salt.",
   "datePublished": "2024-06-13",
   "recipeCuisine": "Mexican",
   "recipeCategory": "Food",
@@ -26,20 +26,22 @@
   },
   "recipeIngredient": [
     "3 ripe avocados",
-    "1 roma tomato",
-    "1 red onion",
-    "1 jalapeño",
+    "1 roma tomato, seeds removed",
+    "1/4 red onion",
+    "1 serrano pepper",
     "2 limes",
-    "cilantro"
+    "1/4 cup chopped cilantro",
+    "kosher salt",
+    "olive oil, optional"
   ],
   "recipeInstructions": [
     {
       "@type": "HowToStep",
-      "text": "Cube the avocados."
+      "text": "Cube the avocados, then mash them lightly, leaving some texture."
     },
     {
       "@type": "HowToStep",
-      "text": "Chop the onion, tomato, cilantro, and jalapeño."
+      "text": "Remove the tomato seeds, then chop the tomato, red onion, cilantro, and serrano."
     },
     {
       "@type": "HowToStep",
@@ -51,7 +53,15 @@
     },
     {
       "@type": "HowToStep",
-      "text": "Add salt to taste."
+      "text": "Add kosher salt to taste."
+    },
+    {
+      "@type": "HowToTip",
+      "text": "Olive oil is optional; drizzle if the avocados are dry."
+    },
+    {
+      "@type": "HowToTip",
+      "text": "Add a small pinch of cumin."
     }
   ]
 }
