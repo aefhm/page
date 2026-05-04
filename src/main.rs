@@ -335,8 +335,8 @@ fn build_writing(path: &std::path::Path) -> Result<PostSummary> {
 
     let title = body_src
         .lines()
-        .find_map(|line| line.strip_prefix("# "))
-        .context("writing missing H1 title")?
+        .find_map(|line| line.strip_prefix("## "))
+        .context("writing missing title heading")?
         .to_string();
 
     let body_html = render_djot(&body_src)?;
