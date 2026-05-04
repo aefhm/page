@@ -501,13 +501,15 @@ nav ul a:hover {
   }
 
   article.recipes,
-  article.readings {
+  article.readings,
+  article.writings {
     display: block;
     width: min(var(--size-reading-width), 100%);
   }
 
   article.recipes > aside,
-  article.readings > aside {
+  article.readings > aside,
+  article.writings > aside {
     grid-column: auto;
     margin-top: var(--space-0);
   }
