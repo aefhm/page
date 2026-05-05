@@ -1,6 +1,11 @@
 use anyhow::{Context, Result};
 use jotdown::Render;
 
+const SITE_URL: &str = "https://xizhang.page";
+const SITE_NAME: &str = "Field Bobbin";
+const SITE_DESCRIPTION: &str =
+    "Personal site by Xi Zhang with recipes, readings, writings, and an about me page.";
+
 struct RecipeSummary {
     slug: String,
     name: String,
@@ -62,6 +67,9 @@ fn main() -> Result<()> {
     let writings_html = render_layout("Writings", &writings_body, None);
 
     std::fs::write("public/writings/index.html", writings_html)?;
+
+    let llms_text = render_llms_txt(&recipes, &posts);
+    std::fs::write("public/llms.txt", llms_text)?;
 
     Ok(())
 }
@@ -399,4 +407,52 @@ fn render_djot(src: &str) -> Result<String> {
     jotdown::html::Renderer::default().push(jotdown::Parser::new(src), &mut out)?;
 
     Ok(out)
+}
+
+fn render_llms_txt(recipes: &[RecipeSummary], posts: &[PostSummary]) -> String {
+    let mut recipe_lines = String::new();
+
+    for recipe in recipes {
+        recipe_lines.push_str(&format!(
+            "- [{}]({}/recipes/{}.html) - [JSON-LD]({}/recipes/{}.jsonld)\n",
+            recipe.name, SITE_URL, recipe.slug, SITE_URL, recipe.slug
+        ));
+    }
+
+    let mut post_lines = String::new();
+
+    for post in posts {
+        post_lines.push_str(&format!(
+            "- [{}]({}/writings/{}.html)\n",
+            post.title, SITE_URL, post.slug
+        ));
+    }
+
+    format!(
+        r#"# {SITE_NAME}
+
+        {SITE_DESCRIPTION}
+            
+        ## Pages
+
+          - [About]({SITE_URL}/index.html)
+          - [Recipes]({SITE_URL}/recipes/)
+          - [Writings]({SITE_URL}/writings/)
+          - [Readings]({SITE_URL}/readings/)
+
+        ## Recipes
+
+          Recipe pages include embedded Schema.org JSON-LD. Sidecar JSON-LD files are available next to each recipe page.
+          {recipe_lines}
+
+        ## Writings
+
+          {post_lines}
+
+        ## Readings
+
+          - [Readings]({SITE_URL}/readings/)
+
+        "#
+    )
 }

@@ -1,0 +1,36 @@
+# Field Bobbin
+
+        Personal site by Xi Zhang with recipes, readings, writings, and an about me page.
+            
+        ## Pages
+
+          - [About](https://xizhang.page/index.html)
+          - [Recipes](https://xizhang.page/recipes/)
+          - [Writings](https://xizhang.page/writings/)
+          - [Readings](https://xizhang.page/readings/)
+
+        ## Recipes
+
+          Recipe pages include embedded Schema.org JSON-LD. Sidecar JSON-LD files are available next to each recipe page.
+          - [Biscuits](https://xizhang.page/recipes/biscuits.html) - [JSON-LD](https://xizhang.page/recipes/biscuits.jsonld)
+- [Crêpes](https://xizhang.page/recipes/crepes.html) - [JSON-LD](https://xizhang.page/recipes/crepes.jsonld)
+- [Dumplings](https://xizhang.page/recipes/dumplings.html) - [JSON-LD](https://xizhang.page/recipes/dumplings.jsonld)
+- [Guacamole](https://xizhang.page/recipes/guacamole.html) - [JSON-LD](https://xizhang.page/recipes/guacamole.jsonld)
+- [Kung Pao Chicken](https://xizhang.page/recipes/kung-pao-chicken.html) - [JSON-LD](https://xizhang.page/recipes/kung-pao-chicken.jsonld)
+- [Red Bean Buns](https://xizhang.page/recipes/red-bean-buns.html) - [JSON-LD](https://xizhang.page/recipes/red-bean-buns.jsonld)
+- [Roasted Vegetables](https://xizhang.page/recipes/roasted-vegetables.html) - [JSON-LD](https://xizhang.page/recipes/roasted-vegetables.jsonld)
+- [V60 Pour Over Coffee](https://xizhang.page/recipes/coffee.html) - [JSON-LD](https://xizhang.page/recipes/coffee.jsonld)
+
+
+        ## Writings
+
+          - [2016 After Election Thanksgiving](https://xizhang.page/writings/2016-after-election-thanksgiving.html)
+- [Michelle](https://xizhang.page/writings/michelle.html)
+- [On Changes](https://xizhang.page/writings/on-changes.html)
+
+
+        ## Readings
+
+          - [Readings](https://xizhang.page/readings/)
+
+        

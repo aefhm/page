@@ -1,21 +1,29 @@
-# Allow all legitimate user agents
+# Content Signals Policy - Declaring AI usage preferences
+# search=yes: Allow indexing for search results
+# ai-input=yes: Allow AI to read content for real-time answers/inference
+# ai-train=no: Do NOT use content for training AI models
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
-# Disallow AI and LLM crawlers
-User-agent: ChatGPT-User
-Disallow: /
+# Reference to LLM-friendly content summary
+# See /llms.txt for structured site information
 
+# Allow AI inference/search crawlers (they should respect ai-train=no)
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Block known training-only crawlers
 User-agent: GPTBot
 Disallow: /
 
-User-agent: Google-Extended
-Disallow: /
-
 User-agent: CCBot
-Disallow: /
-
-User-agent: Claude-Web
 Disallow: /
 
 User-agent: anthropic-ai
@@ -27,10 +35,8 @@ Disallow: /
 User-agent: Bytespider
 Disallow: /
 
-User-agent: CCBot
-Disallow: /
-
-# Disallow access to sensitive directories
+# Disallow access to sensitive directories for all bots
+User-agent: *
 Disallow: /private/
 Disallow: /admin/
 Disallow: /api/
