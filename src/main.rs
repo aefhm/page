@@ -431,28 +431,28 @@ fn render_llms_txt(recipes: &[RecipeSummary], posts: &[PostSummary]) -> String {
     format!(
         r#"# {SITE_NAME}
 
-        {SITE_DESCRIPTION}
+{SITE_DESCRIPTION}
             
-        ## Pages
+## Pages
 
-          - [About]({SITE_URL}/index.html)
-          - [Recipes]({SITE_URL}/recipes/)
-          - [Writings]({SITE_URL}/writings/)
-          - [Readings]({SITE_URL}/readings/)
+- [About]({SITE_URL}/index.html)
+- [Recipes]({SITE_URL}/recipes/)
+- [Writings]({SITE_URL}/writings/)
+- [Readings]({SITE_URL}/readings/index.html)
 
-        ## Recipes
+## Recipes
 
-          Recipe pages include embedded Schema.org JSON-LD. Sidecar JSON-LD files are available next to each recipe page.
-          {recipe_lines}
+Recipe pages include embedded Schema.org JSON-LD. Sidecar JSON-LD files are available next to each recipe page.
 
-        ## Writings
+{recipe_lines}
 
-          {post_lines}
+## Writings
 
-        ## Readings
+{post_lines}
 
-          - [Readings]({SITE_URL}/readings/)
+## Readings
 
+- [Readings]({SITE_URL}/readings/index.html)
         "#
     )
 }
