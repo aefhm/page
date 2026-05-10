@@ -7,4 +7,4 @@ serve:
 	npx http-server public -p 8080 --cors
 
 clean:
-	rm -rf target
+	rm -rf public target

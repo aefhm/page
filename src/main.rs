@@ -17,8 +17,7 @@ struct PostSummary {
 }
 
 fn main() -> Result<()> {
-    std::fs::create_dir_all("public/recipes")?;
-    std::fs::create_dir_all("public/writings")?;
+    rebuild_public_dir()?;
 
     build_page("pages/index.html", "public/index.html", "Xi")?;
     build_page(
@@ -70,6 +69,40 @@ fn main() -> Result<()> {
 
     let llms_text = render_llms_txt(&recipes, &posts);
     std::fs::write("public/llms.txt", llms_text)?;
+
+    Ok(())
+}
+
+fn rebuild_public_dir() -> Result<()> {
+    let public = std::path::Path::new("public");
+
+    if public.exists() {
+        std::fs::remove_dir_all(public)?;
+    }
+
+    std::fs::create_dir("public")?;
+    std::fs::create_dir("public/fonts")?;
+    std::fs::create_dir("public/images")?;
+    std::fs::create_dir("public/recipes")?;
+    std::fs::create_dir("public/writings")?;
+
+    std::fs::copy("static/style.css", "public/style.css")?;
+    std::fs::copy("static/robots.txt", "public/robots.txt")?;
+
+    for entry in std::fs::read_dir("static/fonts")? {
+        let entry = entry?;
+
+        if entry.file_type()?.is_file() {
+            std::fs::copy(entry.path(), public.join("fonts").join(entry.file_name()))?;
+        }
+    }
+    for entry in std::fs::read_dir("static/images")? {
+        let entry = entry?;
+
+        if entry.file_type()?.is_file() {
+            std::fs::copy(entry.path(), public.join("images").join(entry.file_name()))?;
+        }
+    }
 
     Ok(())
 }
