@@ -165,6 +165,7 @@
   --ink-blue-soft: #3c527f;
   --imperial-yellow: #F4C430;
   --imperial-yellow-rgb: 244 196 48;
+  --visited-link: #8f5f1f;
   --white: #ffffff;
   --alpha-nav-line: 0.18;
   --alpha-ink-muted: 0.6;
@@ -240,6 +241,11 @@ a {
   transition: color var(--duration-fast), text-decoration-color var(--duration-fast);
 }
 
+a:visited {
+  color: var(--visited-link);
+  text-decoration-color: var(--visited-link);
+}
+
 a:hover {
   color: var(--imperial-yellow);
   text-decoration-color: var(--imperial-yellow);
@@ -311,7 +317,12 @@ nav ul a {
   letter-spacing: var(--tracking-nav);
 }
 
-nav ul a:hover {
+nav ul a:visited {
+  color: var(--ink-blue);
+}
+
+nav ul a:hover,
+nav ul a:visited:hover {
   color: var(--imperial-yellow);
 }
 
