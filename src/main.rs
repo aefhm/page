@@ -414,7 +414,11 @@ fn render_layout(title: &str, body: &str, jsonld: Option<&str>) -> String {
   </head>
   <body>
     <header>
-      <h1><span class="field">Field</span> <span class="accent">Bobbin</span></h1>
+      <h1>
+      <a class="site-title" href="/index.html" aria-label="Field Bobbin Home">
+        <span class="field">Field</span> <span class="accent">Bobbin</span>
+      </a>
+      </h1>
     </header>
     <nav>
       <ul>
