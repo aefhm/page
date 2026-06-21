@@ -160,14 +160,14 @@
   --easing-image: ease-in;
   --header-size: larger;
 
-  --tree-ink: #203527;
-  --tree-ink-rgb: 32 53 39;
-  --link-green: #5f6a22;
-  --dry-grass: #a88d2c;
-  --dry-grass-rgb: 168 141 44;
-  --visited-green: #446033;
-  --ground-white: #ffffff;
-  --alpha-rule-line: 0.22;
+  --tree-ink: #123445;
+  --tree-ink-rgb: 18 52 69;
+  --link-green: #2f6168;
+  --dry-grass: #615c2c;
+  --dry-grass-rgb: 97 92 44;
+  --visited-green: #485a31;
+  --ground-white: #f2f5ef;
+  --alpha-rule-line: 0.16;
   --alpha-muted: 0.6;
   --alpha-cite: 0.72;
   --alpha-divider-strong: 0.32;
