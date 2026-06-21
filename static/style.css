@@ -475,7 +475,8 @@ nav ul a:visited:hover {
     text-align: left;
   }
 
-  article.recipes {
+  article.recipes,
+  article.about-layout {
     display: block;
   }
 
@@ -562,7 +563,8 @@ nav ul a:visited:hover {
 
   article.recipes,
   article.readings,
-  article.writings {
+  article.writings,
+  article.about-layout {
     display: block;
     width: min(var(--size-reading-width), 100%);
   }
@@ -622,10 +624,6 @@ nav ul a:visited:hover {
     max-width: var(--size-img-max);
   }
 
-  .about-layout > aside {
-    margin-top: calc(var(--space-aside-top) + var(--space-about-photo-offset));
-  }
-
   figure {
     margin: var(--space-0);
   }
@@ -669,6 +667,11 @@ blockquote cite {
 
 section + section {
   margin-top: var(--space-section-gap);
+}
+
+.about-photo {
+  margin-top: var(--space-section-gap);
+  margin-bottom: var(--space-about-photo-offset);
 }
 
 .section-divider {
