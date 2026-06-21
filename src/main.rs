@@ -14,6 +14,7 @@ struct RecipeSummary {
 struct PostSummary {
     slug: String,
     title: String,
+    date_published: String,
 }
 
 fn main() -> Result<()> {
@@ -60,7 +61,7 @@ fn main() -> Result<()> {
         posts.push(post);
     }
 
-    posts.sort_by(|a, b| a.title.cmp(&b.title));
+    sort_posts_chronologically(&mut posts);
 
     let writings_body = render_writings_index(&posts);
     let writings_html = render_layout("Writings", &writings_body, None);
@@ -341,10 +342,13 @@ fn render_writings_index(posts: &[PostSummary]) -> String {
     let mut list_html = String::new();
 
     for post in posts {
+        let display_date = display_writing_date(&post.date_published);
+        let full_date = full_writing_date(&post.date_published);
+
         list_html.push_str(&format!(
-            r#"        <li><a href="./{}.html">{}</a></li>
+            r#"        <li><a href="./{}.html">{}</a><time class="writing-date" datetime="{}" aria-label="{}" title="{}">{}</time></li>
 "#,
-            post.slug, post.title
+            post.slug, post.title, post.date_published, full_date, full_date, display_date
         ));
     }
 
@@ -352,7 +356,7 @@ fn render_writings_index(posts: &[PostSummary]) -> String {
         r#"    <article class="writings">
     <section>
       <h2>Writings</h2>
-      <ul>
+      <ul class="writing-list">
 {list_html}        </ul>
     </section>
   </article>"#
@@ -368,11 +372,17 @@ fn build_writing(path: &std::path::Path) -> Result<PostSummary> {
 
     let body_src = lines.collect::<Vec<_>>().join("\n");
 
-    let slug = meta_line
-        .strip_prefix("{slug=\"")
-        .and_then(|rest| rest.split('"').next())
+    let slug = writing_meta_value(meta_line, "slug")
         .context("writing missing slug identifier")?
         .to_string();
+
+    let date_published = writing_meta_value(meta_line, "datePublished")
+        .context("writing missing datePublished identifier")?
+        .to_string();
+
+    if !is_iso_date(&date_published) {
+        anyhow::bail!("writing datePublished must be a valid YYYY-MM-DD date");
+    }
 
     let title = body_src
         .lines()
@@ -393,7 +403,127 @@ fn build_writing(path: &std::path::Path) -> Result<PostSummary> {
 
     std::fs::write(format!("public/writings/{slug}.html"), html)?;
 
-    Ok(PostSummary { slug, title })
+    Ok(PostSummary {
+        slug,
+        title,
+        date_published,
+    })
+}
+
+fn writing_meta_value<'a>(meta_line: &'a str, field: &str) -> Option<&'a str> {
+    let prefix = format!("{field}=\"");
+    let value_start = meta_line.find(&prefix)? + prefix.len();
+    let rest = &meta_line[value_start..];
+
+    rest.split('"').next()
+}
+
+fn is_iso_date(date: &str) -> bool {
+    let bytes = date.as_bytes();
+
+    if !(bytes.len() == 10
+        && bytes[0..4].iter().all(u8::is_ascii_digit)
+        && bytes[4] == b'-'
+        && bytes[5..7].iter().all(u8::is_ascii_digit)
+        && bytes[7] == b'-'
+        && bytes[8..10].iter().all(u8::is_ascii_digit))
+    {
+        return false;
+    }
+
+    let Ok(year) = date[0..4].parse::<u32>() else {
+        return false;
+    };
+    let Ok(month) = date[5..7].parse::<u32>() else {
+        return false;
+    };
+    let Ok(day) = date[8..10].parse::<u32>() else {
+        return false;
+    };
+
+    let max_day = match month {
+        1 | 3 | 5 | 7 | 8 | 10 | 12 => 31,
+        4 | 6 | 9 | 11 => 30,
+        2 if is_leap_year(year) => 29,
+        2 => 28,
+        _ => return false,
+    };
+
+    day > 0 && day <= max_day
+}
+
+fn is_leap_year(year: u32) -> bool {
+    (year % 4 == 0 && year % 100 != 0) || year % 400 == 0
+}
+
+fn display_writing_date(date: &str) -> String {
+    let Some((month, _, year)) = writing_date_parts(date, MonthNameStyle::Short) else {
+        return date.to_string();
+    };
+
+    format!("{month} {year}")
+}
+
+fn full_writing_date(date: &str) -> String {
+    let Some((month, day, year)) = writing_date_parts(date, MonthNameStyle::Long) else {
+        return date.to_string();
+    };
+
+    format!("{month} {day}, {year}")
+}
+
+enum MonthNameStyle {
+    Short,
+    Long,
+}
+
+fn writing_date_parts(
+    date: &str,
+    month_name_style: MonthNameStyle,
+) -> Option<(&'static str, &str, &str)> {
+    if !is_iso_date(date) {
+        return None;
+    }
+
+    let month = match (month_name_style, &date[5..7]) {
+        (MonthNameStyle::Short, "01") => "Jan",
+        (MonthNameStyle::Short, "02") => "Feb",
+        (MonthNameStyle::Short, "03") => "Mar",
+        (MonthNameStyle::Short, "04") => "Apr",
+        (MonthNameStyle::Short, "05") => "May",
+        (MonthNameStyle::Short, "06") => "Jun",
+        (MonthNameStyle::Short, "07") => "Jul",
+        (MonthNameStyle::Short, "08") => "Aug",
+        (MonthNameStyle::Short, "09") => "Sep",
+        (MonthNameStyle::Short, "10") => "Oct",
+        (MonthNameStyle::Short, "11") => "Nov",
+        (MonthNameStyle::Short, "12") => "Dec",
+        (MonthNameStyle::Long, "01") => "January",
+        (MonthNameStyle::Long, "02") => "February",
+        (MonthNameStyle::Long, "03") => "March",
+        (MonthNameStyle::Long, "04") => "April",
+        (MonthNameStyle::Long, "05") => "May",
+        (MonthNameStyle::Long, "06") => "June",
+        (MonthNameStyle::Long, "07") => "July",
+        (MonthNameStyle::Long, "08") => "August",
+        (MonthNameStyle::Long, "09") => "September",
+        (MonthNameStyle::Long, "10") => "October",
+        (MonthNameStyle::Long, "11") => "November",
+        (MonthNameStyle::Long, "12") => "December",
+        _ => return None,
+    };
+    let day = date[8..10].trim_start_matches('0');
+    let year = &date[0..4];
+
+    Some((month, day, year))
+}
+
+fn sort_posts_chronologically(posts: &mut [PostSummary]) {
+    posts.sort_by(|a, b| {
+        b.date_published
+            .cmp(&a.date_published)
+            .then_with(|| a.title.cmp(&b.title))
+    });
 }
 
 fn render_layout(title: &str, body: &str, jsonld: Option<&str>) -> String {
@@ -492,4 +622,84 @@ Recipe pages include embedded Schema.org JSON-LD. Sidecar JSON-LD files are avai
 - [Readings]({SITE_URL}/readings/index.html)
         "#
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn extracts_writing_metadata_regardless_of_field_order() {
+        let meta = r#"{inLanguage="en" datePublished="2026-06-12" slug="example"}"#;
+
+        assert_eq!(writing_meta_value(meta, "slug"), Some("example"));
+        assert_eq!(
+            writing_meta_value(meta, "datePublished"),
+            Some("2026-06-12")
+        );
+    }
+
+    #[test]
+    fn sorts_posts_newest_first_then_by_title() {
+        let mut posts = vec![
+            PostSummary {
+                slug: "older".to_string(),
+                title: "Older".to_string(),
+                date_published: "2025-01-01".to_string(),
+            },
+            PostSummary {
+                slug: "newer-b".to_string(),
+                title: "B".to_string(),
+                date_published: "2026-01-01".to_string(),
+            },
+            PostSummary {
+                slug: "newer-a".to_string(),
+                title: "A".to_string(),
+                date_published: "2026-01-01".to_string(),
+            },
+        ];
+
+        sort_posts_chronologically(&mut posts);
+
+        assert_eq!(
+            posts
+                .iter()
+                .map(|post| post.slug.as_str())
+                .collect::<Vec<_>>(),
+            ["newer-a", "newer-b", "older"]
+        );
+    }
+
+    #[test]
+    fn validates_iso_date_shape() {
+        assert!(is_iso_date("2026-06-12"));
+        assert!(is_iso_date("2024-02-29"));
+        assert!(!is_iso_date("2026-6-12"));
+        assert!(!is_iso_date("June 12, 2026"));
+        assert!(!is_iso_date("2026-02-29"));
+        assert!(!is_iso_date("2026-13-01"));
+    }
+
+    #[test]
+    fn displays_iso_dates_as_human_readable_dates() {
+        assert_eq!(display_writing_date("2026-06-12"), "Jun 2026");
+        assert_eq!(display_writing_date("2026-05-01"), "May 2026");
+        assert_eq!(full_writing_date("2026-06-12"), "June 12, 2026");
+        assert_eq!(full_writing_date("2026-05-01"), "May 1, 2026");
+    }
+
+    #[test]
+    fn renders_published_dates_in_writings_index() {
+        let html = render_writings_index(&[PostSummary {
+            slug: "example".to_string(),
+            title: "Example".to_string(),
+            date_published: "2026-06-12".to_string(),
+        }]);
+
+        assert!(
+            html.contains(
+                r#"<time class="writing-date" datetime="2026-06-12" aria-label="June 12, 2026" title="June 12, 2026">Jun 2026</time>"#
+            )
+        );
+    }
 }

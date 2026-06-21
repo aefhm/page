@@ -351,6 +351,21 @@ nav ul a:visited:hover {
   text-align: start;
 }
 
+.writing-list li {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 0.125rem;
+}
+
+.writing-date {
+  color: rgb(var(--ink-blue-rgb) / var(--alpha-ink-muted));
+  font-size: var(--font-size-cite);
+  white-space: nowrap;
+}
+
 .recipes ol {
   margin: var(--space-0);
   padding-left: 1.5rem;
