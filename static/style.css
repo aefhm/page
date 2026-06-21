@@ -160,35 +160,34 @@
   --easing-image: ease-in;
   --header-size: larger;
 
-  --ink-blue: #18305f;
-  --ink-blue-rgb: 24 48 95;
-  --ink-blue-soft: #3c527f;
-  --imperial-yellow: #F4C430;
-  --imperial-yellow-rgb: 244 196 48;
-  --visited-link: #a98545;
-  --white: #ffffff;
-  --alpha-nav-line: 0.18;
-  --alpha-ink-muted: 0.6;
-  --alpha-ink-cite: 0.72;
-  --alpha-ink-panel: 0.04;
-  --alpha-yellow-divider-strong: 0.3;
-  --alpha-yellow-divider-soft: 0.16;
-  --tooltip-bg: var(--ink-blue);
-  --tooltip-fg: var(--white);
+  --tree-ink: #203527;
+  --tree-ink-rgb: 32 53 39;
+  --link-green: #5f6a22;
+  --dry-grass: #a88d2c;
+  --dry-grass-rgb: 168 141 44;
+  --visited-green: #446033;
+  --ground-white: #ffffff;
+  --alpha-rule-line: 0.22;
+  --alpha-muted: 0.6;
+  --alpha-cite: 0.72;
+  --alpha-divider-strong: 0.32;
+  --alpha-divider-soft: 0.18;
+  --tooltip-bg: var(--tree-ink);
+  --tooltip-fg: var(--ground-white);
 
   font-family: var(--font-body);
-  color: var(--ink-blue);
+  color: var(--tree-ink);
 }
 
 html {
-  background: var(--white);
+  background: var(--ground-white);
   font-family: inherit;
 }
 
 header {
   font-size: var(--header-size);
   text-align: center;
-  color: var(--ink-blue);
+  color: var(--tree-ink);
 }
 
 h1 {
@@ -198,11 +197,11 @@ h1 {
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-h1);
   line-height: var(--line-height-h1);
-  color: var(--ink-blue);
+  color: var(--tree-ink);
 }
 
 h1 .field { color: inherit; }
-h1 .accent { color: var(--imperial-yellow); }
+h1 .accent { color: var(--dry-grass); }
 
 .site-title,
 .site-title:hover,
@@ -220,14 +219,14 @@ h2 {
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-h2);
   letter-spacing: var(--tracking-heading);
-  color: var(--ink-blue);
+  color: var(--tree-ink);
 }
 
 h3 {
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-h3);
   letter-spacing: var(--tracking-heading);
-  color: var(--ink-blue);
+  color: var(--tree-ink);
 }
 
 body {
@@ -239,23 +238,24 @@ body {
   font-weight: var(--font-weight-regular);
   align-items: center;
   line-height: var(--line-height-body);
+  background: var(--ground-white);
 }
 
 a {
-  color: var(--imperial-yellow);
-  text-decoration-color: var(--imperial-yellow);
+  color: var(--link-green);
+  text-decoration-color: var(--link-green);
   text-underline-offset: var(--underline-offset);
   transition: color var(--duration-fast), text-decoration-color var(--duration-fast);
 }
 
 a:visited {
-  color: var(--visited-link);
-  text-decoration-color: var(--visited-link);
+  color: var(--visited-green);
+  text-decoration-color: var(--visited-green);
 }
 
 a:hover {
-  color: var(--imperial-yellow);
-  text-decoration-color: var(--imperial-yellow);
+  color: var(--tree-ink);
+  text-decoration-color: var(--dry-grass);
 }
 
 /* Lazy loading styles */
@@ -280,7 +280,7 @@ img[loading="lazy"] {
 svg {
   width: var(--size-icon);
   padding: var(--size-icon-padding);
-  fill: var(--ink-blue);
+  fill: var(--tree-ink);
 }
 
 /* Style for SVG tooltips */
@@ -312,7 +312,7 @@ nav ul a {
   transition: color var(--duration-fast) var(--easing-default);
   font-family: var(--font-display);
   font-style: normal;
-  color: var(--ink-blue);
+  color: var(--tree-ink);
   display: block;
   font-size: var(--font-size-nav);
   font-weight: var(--font-weight-nav);
@@ -325,12 +325,12 @@ nav ul a {
 }
 
 nav ul a:visited {
-  color: var(--ink-blue);
+  color: var(--tree-ink);
 }
 
 nav ul a:hover,
 nav ul a:visited:hover {
-  color: var(--imperial-yellow);
+  color: var(--dry-grass);
 }
 
 .recipes ul {
@@ -361,7 +361,7 @@ nav ul a:visited:hover {
 }
 
 .writing-date {
-  color: rgb(var(--ink-blue-rgb) / var(--alpha-ink-muted));
+  color: rgb(var(--tree-ink-rgb) / var(--alpha-muted));
   font-size: var(--font-size-cite);
   white-space: nowrap;
 }
@@ -401,7 +401,7 @@ nav ul a:visited:hover {
 .recipe-description,
 .recipe-meta,
 .recipe-notes p {
-  color: rgb(var(--ink-blue-rgb) / var(--alpha-ink-muted));
+  color: rgb(var(--tree-ink-rgb) / var(--alpha-muted));
 }
 
 .recipe-meta {
@@ -436,7 +436,7 @@ nav ul a:visited:hover {
 .recipe-photos figure {
   margin: var(--space-0);
   padding: 0.9rem;
-  border: var(--size-border-thin) solid rgb(var(--ink-blue-rgb) / var(--alpha-nav-line));
+  border: var(--size-border-thin) solid rgb(var(--tree-ink-rgb) / var(--alpha-rule-line));
 }
 
 .recipe-photos img {
@@ -450,22 +450,22 @@ nav ul a:visited:hover {
 }
 
 .social-media a {
-  color: var(--ink-blue);
+  color: var(--tree-ink);
 }
 
 .social-media svg {
-  fill: var(--ink-blue);
-  stroke: var(--ink-blue);
+  fill: var(--tree-ink);
+  stroke: var(--tree-ink);
   transition: fill var(--duration-fast) var(--easing-default), stroke var(--duration-fast) var(--easing-default);
 }
 
 .social-media a:hover {
-  color: var(--imperial-yellow);
+  color: var(--dry-grass);
 }
 
 .social-media a:hover svg {
-  fill: var(--imperial-yellow);
-  stroke: var(--imperial-yellow);
+  fill: var(--dry-grass);
+  stroke: var(--dry-grass);
 }
 
 @media screen and (max-width: 32rem) {
@@ -501,8 +501,8 @@ nav ul a:visited:hover {
 
   nav {
     width: auto;
-    border-top: var(--size-border-thin) solid rgb(var(--ink-blue-rgb) / var(--alpha-nav-line));
-    border-bottom: var(--size-border-thin) solid rgb(var(--ink-blue-rgb) / var(--alpha-nav-line));
+    border-top: var(--size-border-thin) solid rgb(var(--tree-ink-rgb) / var(--alpha-rule-line));
+    border-bottom: var(--size-border-thin) solid rgb(var(--tree-ink-rgb) / var(--alpha-rule-line));
     margin-bottom: var(--space-nav-margin-mobile);
     padding: var(--space-nav-mobile-y) var(--space-0) var(--space-nav-mobile-bottom);
   }
@@ -597,8 +597,8 @@ nav ul a:visited:hover {
     display: flex;
     justify-content: center;
     width: 100%;
-    border-top: var(--size-border-thin) solid rgb(var(--ink-blue-rgb) / var(--alpha-nav-line));
-    border-bottom: var(--size-border-thin) solid rgb(var(--ink-blue-rgb) / var(--alpha-nav-line));
+    border-top: var(--size-border-thin) solid rgb(var(--tree-ink-rgb) / var(--alpha-rule-line));
+    border-bottom: var(--size-border-thin) solid rgb(var(--tree-ink-rgb) / var(--alpha-rule-line));
     padding: var(--space-nav-desktop-y) var(--space-0);
     margin-bottom: var(--space-nav-margin-desktop);
   }
@@ -633,19 +633,19 @@ nav ul a:visited:hover {
 
 figcaption {
   font-size: var(--font-size-caption);
-  color: rgb(var(--ink-blue-rgb) / var(--alpha-ink-muted));
+  color: rgb(var(--tree-ink-rgb) / var(--alpha-muted));
   text-align: center;
   margin-top: var(--space-figure-caption-top);
   font-style: italic;
 }
 
 blockquote {
-  border-left: var(--size-border-accent) solid var(--imperial-yellow);
-  background: rgb(var(--ink-blue-rgb) / var(--alpha-ink-panel));
+  border-left: var(--size-border-accent) solid var(--dry-grass);
+  background: rgb(var(--dry-grass-rgb) / 0.06);
   padding: var(--space-blockquote-pad-y) var(--space-blockquote-pad-x);
   margin: var(--space-blockquote-y) var(--space-0);
   font-style: italic;
-  color: var(--ink-blue-soft);
+  color: var(--link-green);
   line-height: var(--line-height-blockquote);
 }
 
@@ -654,7 +654,7 @@ blockquote cite {
   margin-top: var(--space-cite-top);
   font-style: normal;
   font-size: var(--font-size-cite);
-  color: rgb(var(--ink-blue-rgb) / var(--alpha-ink-cite));
+  color: rgb(var(--tree-ink-rgb) / var(--alpha-cite));
 }
 
 .writings section > p:first-of-type::first-letter {
@@ -664,7 +664,7 @@ blockquote cite {
   float: left;
   line-height: var(--line-height-dropcap);
   padding: var(--space-dropcap-top) var(--space-dropcap-right) var(--space-0) var(--space-0);
-  color: var(--imperial-yellow);
+  color: var(--dry-grass);
 }
 
 section + section {
@@ -679,13 +679,13 @@ section + section {
     repeating-linear-gradient(
       90deg,
       transparent 0 var(--size-divider-a-start),
-      rgb(var(--imperial-yellow-rgb) / var(--alpha-yellow-divider-strong)) var(--size-divider-a-start) var(--size-divider-a-mid),
+      rgb(var(--dry-grass-rgb) / var(--alpha-divider-strong)) var(--size-divider-a-start) var(--size-divider-a-mid),
       transparent var(--size-divider-a-mid) var(--size-divider-a-end)
     ),
     repeating-linear-gradient(
       90deg,
       transparent var(--size-divider-b-start) var(--size-divider-b-mid),
-      rgb(var(--imperial-yellow-rgb) / var(--alpha-yellow-divider-soft)) var(--size-divider-b-mid) var(--size-divider-b-peak),
+      rgb(var(--dry-grass-rgb) / var(--alpha-divider-soft)) var(--size-divider-b-mid) var(--size-divider-b-peak),
       transparent var(--size-divider-b-peak) var(--size-divider-b-end)
     );
   background-position: center;
