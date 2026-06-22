@@ -670,7 +670,7 @@ section + section {
 }
 
 .about-photo {
-  margin-top: var(--space-section-gap);
+  margin-top: var(--space-about-photo-offset);
   margin-bottom: var(--space-about-photo-offset);
 }
 
