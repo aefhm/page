@@ -311,6 +311,7 @@ article section > p:first-of-type {
   color: rgb(var(--tree-ink-rgb) / var(--alpha-muted));
   font-size: var(--font-size-cite);
   white-space: nowrap;
+  margin-left: auto;
 }
 
 .recipes ol {
