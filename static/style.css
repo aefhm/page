@@ -31,7 +31,7 @@
   --font-weight-nav: 600;
 
   --font-size-body: 18px;
-  --font-size-h1: clamp(2.6rem, 7vw, 4rem);
+  --font-size-h1: clamp(2.2rem, 5.5vw, 3.1rem);
   --font-size-h2: 1.5rem;
   --font-size-h3: 1.15rem;
   --font-size-nav: 0.9rem;
@@ -55,6 +55,7 @@
   --space-h1-bottom: 0.8rem;
   --space-nav-link-y: 0.25rem;
   --space-nav-link-x: 0.4rem;
+  --space-nav-pill-x: 0.5rem;
   --space-nav-mobile-y: 0.55rem;
   --space-nav-mobile-bottom: 0.75rem;
   --space-nav-desktop-y: 0.55rem;
@@ -82,6 +83,7 @@
   --size-aside-min: 15rem;
   --size-aside-max: 18rem;
   --size-tooltip-radius: 4px;
+  --size-nav-radius: 3px;
   --size-border-thin: 1px;
   --size-border-accent: 3px;
   --size-nav-gap-desktop: 2rem;
@@ -109,6 +111,7 @@
   --visited-green: #485a31;
   --ground-white: #f2f5ef;
   --alpha-rule-line: 0.16;
+  --alpha-nav-hover: 0.1;
   --alpha-muted: 0.6;
   --alpha-cite: 0.72;
   --tooltip-bg: var(--tree-ink);
@@ -248,7 +251,8 @@ nav ul {
 }
 
 nav ul a {
-  transition: color var(--duration-fast) var(--easing-default);
+  transition: background var(--duration-fast) var(--easing-default), color var(--duration-fast) var(--easing-default);
+  border-radius: var(--size-nav-radius);
   font-family: var(--font-display);
   font-style: normal;
   color: var(--tree-ink);
@@ -269,7 +273,8 @@ nav ul a:visited {
 
 nav ul a:hover,
 nav ul a:visited:hover {
-  color: var(--dry-grass-strong);
+  background: rgb(var(--tree-ink-rgb) / var(--alpha-nav-hover));
+  color: var(--tree-ink);
 }
 
 .recipes ul {
@@ -494,7 +499,8 @@ article section > p:first-of-type {
 
   nav ul a {
     border: none;
-    padding: var(--space-nav-link-x) var(--space-0);
+    padding: var(--space-nav-link-x) var(--space-nav-pill-x);
+    margin: var(--space-0) calc(-1 * var(--space-nav-pill-x));
   }
 
   figure {
