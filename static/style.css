@@ -201,9 +201,9 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid var(--dry-grass);
+  outline: none;
   border-radius: 3px;
-  outline-offset: 1px;
+  box-shadow: 0 0 0 2px var(--dry-grass);
 }
 
 /* Lazy loading styles */
@@ -368,6 +368,8 @@ article section > p:first-of-type {
 }
 
 .social-media a {
+  display: flex;
+  align-items: center;
   color: var(--tree-ink);
 }
 
