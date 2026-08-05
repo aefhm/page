@@ -200,6 +200,12 @@ a:hover {
   text-decoration-color: var(--dry-grass);
 }
 
+a:focus-visible {
+  outline: 2px solid var(--dry-grass);
+  border-radius: 3px;
+  outline-offset: 1px;
+}
+
 /* Lazy loading styles */
 img {
   opacity: var(--space-0);
