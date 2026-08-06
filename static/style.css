@@ -73,7 +73,6 @@
   --space-nav-margin-desktop: .5rem;
   --space-article-col-gap: 3rem;
   --space-section-gap: 1rem;
-  --space-about-photo-offset: 1rem;
   --space-figure-caption-top: 0.5rem;
   --space-blockquote-y: 1.5rem;
   --space-blockquote-pad-y: 0.75rem;
@@ -100,7 +99,6 @@
   --size-nav-gap-mobile-row: 0.35rem;
   --size-nav-gap-mobile-col: 1.4rem;
 
-  /* --tracking-h1: 1.2px; */
   --tracking-heading: 0;
   --tracking-nav: 0.10em;
   --underline-offset: 3px;
@@ -117,7 +115,6 @@
   --link-green: #2f6168;
   --dry-grass: #b05c3a;
   --dry-grass-rgb: 176 92 58;
-  --dry-grass-strong: #a45031;
   --visited-green: #485a31;
   --ground-white: #f2f5ef;
   --alpha-rule-line: 0.16;
@@ -148,7 +145,6 @@ header {
   margin: var(--space-h1-top) var(--space-0) var(--space-h1-bottom);
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-regular);
-  letter-spacing: var(--tracking-h1);
   line-height: var(--line-height-h1);
   color: var(--tree-ink);
 }
@@ -224,19 +220,10 @@ a:focus-visible {
   box-shadow: 0 0 0 2px var(--dry-grass);
 }
 
-/* Lazy loading styles */
 img {
-  opacity: var(--space-0);
-  transition: opacity var(--duration-image) var(--easing-image);
-  width: 100%;
-  max-width: var(--size-img-max);
+  max-width: 100%;
   height: auto;
   display: block;
-  margin: var(--space-0) auto;
-}
-
-img[loading="lazy"] {
-  opacity: 1;
 }
 
 .bold {
@@ -376,7 +363,8 @@ article section > p:first-of-type {
 }
 
 .recipe-hero img {
-  max-width: 100%;
+  max-width: 320px;
+  width: 100%;
 }
 
 .social-media {
@@ -575,9 +563,11 @@ section + section {
   margin-top: var(--space-section-gap);
 }
 
-.about-photo {
-  margin-top: var(--space-about-photo-offset);
-  margin-bottom: var(--space-about-photo-offset);
+.about-photo img {
+  width: 100%;
+  max-width: 240px;
+  margin-inline: auto;
+  margin-top: 1rem;
 }
 
 /* Custom tooltip styles */
