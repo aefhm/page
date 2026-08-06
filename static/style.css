@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Cinzel Decorative';
-  src: url('/fonts/CinzelDecorative-400.woff2') format('woff2');
+  font-family: 'Young Serif';
+  src: url('/fonts/YoungSerif-400.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -33,7 +33,7 @@
 :root {
   --font-body: 'Source Serif 4', Georgia, serif;
   --font-display: var(--font-body);
-  --font-title: 'Cinzel Decorative', var(--font-body);
+  --font-title: 'Young Serif', var(--font-body);
   --font-nav: 'Source Sans 3', sans-serif;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
@@ -99,7 +99,7 @@
   --size-nav-gap-mobile-row: 0.35rem;
   --size-nav-gap-mobile-col: 1.4rem;
 
-  --tracking-h1: 1.2px;
+  /* --tracking-h1: 1.2px; */
   --tracking-heading: 0;
   --tracking-nav: 0.10em;
   --underline-offset: 3px;
