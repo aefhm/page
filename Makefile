@@ -11,6 +11,14 @@ preview: build
 	cd public && python3 -m http.server $(PORT) --bind $(HOST)
 
 serve: build
+	@watchexec \
+	--watch src \
+	--watch pages \
+	--watch writings \
+	--watch recipes \
+	--watch static \
+	--watch Cargo.toml \
+	-- cargo run & \
 	cd public && python3 -m http.server $(PORT) --bind $(HOST)
 
 clean:

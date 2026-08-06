@@ -137,7 +137,7 @@ fn render_recipes_index(recipes: &[RecipeSummary]) -> String {
         r#"
             <article class="recipes">
             <section>
-            <h2>Recipes</h2>
+            <h1>Recipes</h1>
             <ul>
             {list_html}
             </ul>
@@ -279,7 +279,7 @@ fn build_recipe(path: &std::path::Path) -> Result<RecipeSummary> {
     } else {
         format!(
             r#"    <section class="recipe-notes">
-            <h3>Notes</h3>
+            <h2>Notes</h2>
             {notes_html} </section>
             "#
         )
@@ -316,12 +316,12 @@ fn build_recipe(path: &std::path::Path) -> Result<RecipeSummary> {
     let body = format!(
         r#"   <article class="recipes">
         <section>
-    <h2>{name}</h2>
+    <h1>{name}</h1>
     {hero_html}
-    <h3>Ingredients</h3>
+    <h2>Ingredients</h2>
     <ul>
     {ingredients_html}    </ul>
-    <h3>Steps</h3>
+    <h2>Steps</h2>
     <ol>
     {steps_html} </ol>
     </section>
@@ -386,7 +386,7 @@ fn build_writing(path: &std::path::Path) -> Result<PostSummary> {
 
     let title = body_src
         .lines()
-        .find_map(|line| line.strip_prefix("## "))
+        .find_map(|line| line.strip_prefix("# "))
         .context("writing missing title heading")?
         .to_string();
 
@@ -545,11 +545,9 @@ fn render_layout(title: &str, body: &str, jsonld: Option<&str>) -> String {
   </head>
   <body>
     <header>
-      <h1>
       <a class="site-title" href="/index.html" aria-label="Field Bobbin Home">
         <span class="field">Field</span> <span class="accent">Bobbin</span>
       </a>
-      </h1>
     </header>
     <nav>
       <ul>

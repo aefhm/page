@@ -7,28 +7,37 @@
 }
 
 @font-face {
-  font-family: 'Lora';
-  src: url('/fonts/Lora-400-700.woff2') format('woff2');
+  font-family: 'Source Serif 4';
+  src: url('/fonts/SourceSerif4-400-700.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lora';
-  src: url('/fonts/Lora-400-italic.woff2') format('woff2');
+  font-family: 'Source Serif 4';
+  src: url('/fonts/SourceSerif4-400-italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('/fonts/SourceSans3-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-body: 'Lora', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
   --font-display: var(--font-body);
   --font-title: 'Cinzel Decorative', var(--font-body);
+  --font-nav: 'Source Sans 3', sans-serif;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
-  --font-weight-nav: 600;
+  --font-weight-nav: 500;
 
   --font-size-body: 18px;
   --font-size-h1: clamp(2.2rem, 5.5vw, 3.1rem);
@@ -60,7 +69,7 @@
   --space-nav-mobile-bottom: 0.75rem;
   --space-nav-desktop-y: 0.55rem;
   --space-nav-margin-mobile: 1rem;
-  --space-nav-margin-desktop: 1rem;
+  --space-nav-margin-desktop: .5rem;
   --space-article-col-gap: 3rem;
   --space-section-gap: 1rem;
   --space-about-photo-offset: 1rem;
@@ -92,7 +101,7 @@
 
   --tracking-h1: 1.2px;
   --tracking-heading: 0;
-  --tracking-nav: 0.14em;
+  --tracking-nav: 0.10em;
   --underline-offset: 3px;
   --scale-icon-hover: 1.1;
 
@@ -132,7 +141,8 @@ header {
   color: var(--tree-ink);
 }
 
-h1 {
+.site-title {
+  display: inline-block;
   font-family: var(--font-title);
   margin: var(--space-h1-top) var(--space-0) var(--space-h1-bottom);
   font-size: var(--font-size-h1);
@@ -142,8 +152,8 @@ h1 {
   color: var(--tree-ink);
 }
 
-h1 .field { color: inherit; }
-h1 .accent { color: var(--dry-grass); }
+.site-title .field { color: inherit; }
+.site-title .accent { color: var(--dry-grass); }
 
 .site-title,
 .site-title:hover,
@@ -152,9 +162,16 @@ h1 .accent { color: var(--dry-grass); }
   text-decoration: none;
 }
 
-h2, h3 {
+h1, h2, h3 {
   font-family: var(--font-display);
   line-height: var(--line-height-heading);
+}
+
+h1 {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-h2);
+  letter-spacing: var(--tracking-heading);
+  color: var(--tree-ink);
 }
 
 h2 {
@@ -259,7 +276,7 @@ nav ul {
 nav ul a {
   transition: background var(--duration-fast) var(--easing-default), color var(--duration-fast) var(--easing-default);
   border-radius: var(--size-nav-radius);
-  font-family: var(--font-display);
+  font-family: var(--font-nav);
   font-style: normal;
   color: var(--tree-ink);
   display: block;
