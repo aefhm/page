@@ -358,12 +358,12 @@ article section > p:first-of-type {
   color: rgb(var(--tree-ink-rgb) / var(--alpha-muted));
 }
 
-.recipe-hero {
-  margin: var(--space-0);
+.recipes figure {
+  width: min(100%, 320px);
+  margin: 0;
 }
 
-.recipe-hero img {
-  max-width: 320px;
+.recipes figure img {
   width: 100%;
 }
 
