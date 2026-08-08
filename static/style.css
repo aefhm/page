@@ -367,6 +367,10 @@ article section > p:first-of-type {
   width: 100%;
 }
 
+.recipes .recipe-hero img {
+  padding-left: 1.5rem;
+}
+
 .social-media {
   display: flex;
   justify-content: center;
