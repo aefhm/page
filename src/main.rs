@@ -20,11 +20,12 @@ struct PostSummary {
 fn main() -> Result<()> {
     rebuild_public_dir()?;
 
-    build_page("pages/index.html", "public/index.html", "Xi")?;
+    build_page("pages/index.html", "public/index.html", "Xi", "about")?;
     build_page(
         "pages/readings/index.html",
         "public/readings/index.html",
         "Readings",
+        "readings",
     )?;
 
     let mut recipes = Vec::new();
@@ -44,7 +45,7 @@ fn main() -> Result<()> {
 
     let index_body = render_recipes_index(&recipes);
     let index_jsonld = render_recipes_index_jsonld(&recipes)?;
-    let index_html = render_layout("Recipes", &index_body, Some(&index_jsonld));
+    let index_html = render_layout("Recipes", &index_body, Some(&index_jsonld), "recipes");
 
     std::fs::write("public/recipes/index.html", index_html)?;
 
@@ -64,7 +65,7 @@ fn main() -> Result<()> {
     sort_posts_chronologically(&mut posts);
 
     let writings_body = render_writings_index(&posts);
-    let writings_html = render_layout("Writings", &writings_body, None);
+    let writings_html = render_layout("Writings", &writings_body, None, "writings");
 
     std::fs::write("public/writings/index.html", writings_html)?;
 
@@ -108,9 +109,9 @@ fn rebuild_public_dir() -> Result<()> {
     Ok(())
 }
 
-fn build_page(source: &str, output: &str, title: &str) -> Result<()> {
+fn build_page(source: &str, output: &str, title: &str, current_section: &str) -> Result<()> {
     let body = std::fs::read_to_string(source)?;
-    let html = render_layout(title, &body, None);
+    let html = render_layout(title, &body, None, current_section);
 
     if let Some(parent) = std::path::Path::new(output).parent() {
         std::fs::create_dir_all(parent)?;
@@ -328,7 +329,7 @@ fn build_recipe(path: &std::path::Path) -> Result<RecipeSummary> {
     {notes_section} </article>"#
     );
 
-    let html = render_layout(&name, &body, Some(&public_jsonld));
+    let html = render_layout(&name, &body, Some(&public_jsonld), "recipes");
 
     let html_output_path = format!("public/recipes/{slug}.html");
 
@@ -355,7 +356,7 @@ fn render_writings_index(posts: &[PostSummary]) -> String {
     format!(
         r#"    <article class="writings">
     <section>
-      <h2>Writings</h2>
+      <h1>Writings</h1>
       <ul class="writing-list">
 {list_html}        </ul>
     </section>
@@ -399,7 +400,7 @@ fn build_writing(path: &std::path::Path) -> Result<PostSummary> {
        "#
     );
 
-    let html = render_layout(&title, &post_body, None);
+    let html = render_layout(&title, &post_body, None, "writings");
 
     std::fs::write(format!("public/writings/{slug}.html"), html)?;
 
@@ -526,7 +527,21 @@ fn sort_posts_chronologically(posts: &mut [PostSummary]) {
     });
 }
 
-fn render_layout(title: &str, body: &str, jsonld: Option<&str>) -> String {
+fn render_layout(title: &str, body: &str, jsonld: Option<&str>, current_section: &str) -> String {
+    let current_attribute = |section: &str| {
+        if section == current_section {
+            r#" aria-current="page""#
+        } else {
+            ""
+        }
+    };
+
+    let readings_current = current_attribute("readings");
+    let writings_current = current_attribute("writings");
+    let recipes_current = current_attribute("recipes");
+    let forms_current = current_attribute("forms");
+    let about_current = current_attribute("about");
+
     let jsonld_script = match jsonld {
         Some(jsonld) => format!(r#"<script type="application/ld+json"> {jsonld}</script>"#),
         None => String::new(),
@@ -551,11 +566,11 @@ fn render_layout(title: &str, body: &str, jsonld: Option<&str>) -> String {
     </header>
     <nav>
       <ul>
-        <li><a href="/readings">Readings</a></li>
-        <li><a href="/writings">Writings</a></li>
-        <li><a href="/recipes">Recipes</a></li>
-        <li><a href="/forms/">Forms</a></li>
-        <li><a href="/index.html">About</a></li>
+        <li><a href="/readings"{readings_current}>Readings</a></li>
+        <li><a href="/writings"{writings_current}>Writings</a></li>
+        <li><a href="/recipes"{recipes_current}>Recipes</a></li>
+        <li><a href="/forms/"{forms_current}>Forms</a></li>
+        <li><a href="/index.html"{about_current}>About</a></li>
       </ul>
     </nav>
     <main>
