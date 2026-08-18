@@ -288,6 +288,14 @@ nav ul a:visited:hover {
   color: var(--tree-ink);
 }
 
+article p {
+  margin-block: 1.15em;
+}
+
+article section > p:first-of-type {
+  margin-top: var(--space-0);
+}
+
 .recipes ul {
   list-style: none;
   padding-left: var(--space-0);
@@ -304,14 +312,6 @@ nav ul a:visited:hover {
   padding-left: var(--space-0);
   margin: var(--space-0);
   text-align: start;
-}
-
-article p {
-  margin-block: 1.15em;
-}
-
-article section > p:first-of-type {
-  margin-top: var(--space-0);
 }
 
 .writing-list li {
@@ -371,10 +371,14 @@ article section > p:first-of-type {
   padding-left: 1.5rem;
 }
 
+p:has(+ .social-media) {
+  margin-bottom: 0;
+}
+
 .social-media {
   display: flex;
   justify-content: center;
-  margin-top: var(--space-section-gap);
+  margin-top: .6rem;
   margin-bottom: .6rem;
 }
 
