@@ -15,6 +15,7 @@ struct PostSummary {
     slug: String,
     title: String,
     date_published: String,
+    summary: String,
 }
 
 fn main() -> Result<()> {
@@ -347,9 +348,9 @@ fn render_writings_index(posts: &[PostSummary]) -> String {
         let full_date = full_writing_date(&post.date_published);
 
         list_html.push_str(&format!(
-            r#"        <li><a href="./{}.html">{}</a><time class="writing-date" datetime="{}" aria-label="{}" title="{}">{}</time></li>
+            r#"        <li><div class="writing-heading"><a href="./{}.html">{}</a><time class="writing-date" datetime="{}" aria-label="{}" title="{}">{}</time></div><p class="writing-summary">{}</p></li>
 "#,
-            post.slug, post.title, post.date_published, full_date, full_date, display_date
+            post.slug, post.title, post.date_published, full_date, full_date, display_date, post.summary
         ));
     }
 
@@ -375,6 +376,10 @@ fn build_writing(path: &std::path::Path) -> Result<PostSummary> {
 
     let slug = writing_meta_value(meta_line, "slug")
         .context("writing missing slug identifier")?
+        .to_string();
+
+    let summary = writing_meta_value(meta_line, "summary")
+        .context("writing missing summary")?
         .to_string();
 
     let date_published = writing_meta_value(meta_line, "datePublished")
@@ -408,6 +413,7 @@ fn build_writing(path: &std::path::Path) -> Result<PostSummary> {
         slug,
         title,
         date_published,
+        summary,
     })
 }
 
@@ -660,16 +666,19 @@ mod tests {
                 slug: "older".to_string(),
                 title: "Older".to_string(),
                 date_published: "2025-01-01".to_string(),
+                summary: "A summary".to_string(),
             },
             PostSummary {
                 slug: "newer-b".to_string(),
                 title: "B".to_string(),
                 date_published: "2026-01-01".to_string(),
+                summary: "A summary".to_string(),
             },
             PostSummary {
                 slug: "newer-a".to_string(),
                 title: "A".to_string(),
                 date_published: "2026-01-01".to_string(),
+                summary: "A summary".to_string(),
             },
         ];
 
@@ -708,6 +717,7 @@ mod tests {
             slug: "example".to_string(),
             title: "Example".to_string(),
             date_published: "2026-06-12".to_string(),
+            summary: "A summary".to_string(),
         }]);
 
         assert!(

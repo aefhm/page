@@ -314,17 +314,25 @@ article section > p:first-of-type {
   text-align: start;
 }
 
-.writing-list li {
+.writing-heading {
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
   justify-content: space-between;
-  column-gap: 1rem;
-  row-gap: 0.125rem;
+  gap: 1rem;
+}
+
+.writing-list li + li {
+  margin-block-start: var(--space-section-gap);
+}
+
+.writing-summary {
+  margin-block: 0;
+  opacity: var(--alpha-cite);
+  font-size: var(--font-size-cite);
 }
 
 .writing-date {
-  color: rgb(var(--tree-ink-rgb) / var(--alpha-muted));
+  opacity: var(--alpha-muted);
   font-size: var(--font-size-cite);
   white-space: nowrap;
   margin-left: auto;
