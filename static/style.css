@@ -41,7 +41,7 @@
 
   --font-size-body: 18px;
   --font-size-title: clamp(2.2rem, 5.5vw, 3.1rem);
-  --font-size-h1: 1.5rem;
+  --font-size-h1: clamp(1.5rem, 1rem + 2vw, 2rem);
   --font-size-h2: 1.25rem;
   --font-size-h3: 1.15rem;
   --font-size-nav: 0.9rem;
