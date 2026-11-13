@@ -1,9 +1,12 @@
 HOST ?= 127.0.0.1
 PORT ?= 7778
 
-.PHONY: build clean preview serve
+.PHONY: build clean install preview serve
 
-build:
+install:
+	cargo install watchexec-cli
+
+build: install
 	cargo run
 
 preview: build
